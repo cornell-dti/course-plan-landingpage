@@ -1,4 +1,4 @@
-# vue-app2
+# course-plan-landingpage
 
 ## Project setup
 ```
