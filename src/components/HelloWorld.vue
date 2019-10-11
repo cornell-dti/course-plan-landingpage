@@ -4,14 +4,6 @@
       <div class="banner">
       <h1>{{ msg }}</h1>
       </div>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Team</li>
-        </ul>
-      </nav>
     </header>
 
 
@@ -56,7 +48,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1{
-  color:rgb(223, 79, 91);
+  font-family: Avenir;
+  font-size: 40px;
+  line-height: 55px;
+  color: #FF7979;
 }
 
 h3 {
