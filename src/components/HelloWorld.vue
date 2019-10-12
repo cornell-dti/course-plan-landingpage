@@ -77,7 +77,14 @@ a {
 }
 
 .landing-image {
-  max-width: 33%;
+  max-width: 21.5rem;
+}
+
+.landing-imageWrapper {
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .landing-header {
