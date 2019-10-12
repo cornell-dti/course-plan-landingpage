@@ -22,8 +22,11 @@
             Gain early access by filling out your email below and help us grow into what you need!
           </span>
         </div>
-        <input/>
-        <button class="landing-button">Get Early Access</button>
+        <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
+        <div class="landing-inputWrapper">
+          <input class="landing-input" placeholder="Your School Email"/>
+          <div class="landing-button">Get Early Access</div>
+        </div>
       </div>
     </div>
   </div>
@@ -66,21 +69,81 @@ a {
 
 .landing-content {
   display: flex;
+  color: #000;
+  text-align: left;
+  margin-top: 13.5rem;
+  margin-left: 7.5rem;
+  margin-right: 7.5rem;
 }
 
 .landing-image {
   max-width: 33%;
 }
 
+.landing-header {
+  font-size: 40px;
+}
+
 .landing-body {
-  margin-bottom: .5rem;
+  margin-top: 3.5rem;
+  color: #858585;
+  font-size: 20px;
+  line-height: 27px;
 }
 
 .landing-text--bold {
   font-weight: bold;
 }
 
+.landing-subHeader {
+  margin-bottom: 2.5rem;
+  font-size: 28px;
+}
+
+.landing-inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.landing-input {
+  padding: .75rem;
+  border: 2px #FF7979 solid;
+  border-radius: 5px;
+  width: calc(100% / 3 * 2);
+  margin-right: 30px;
+  font-size: 18px;
+  color: #FF7979;
+}
+
 .landing-button {
   text-transform: uppercase;
+  width: calc(100% / 3);
+  background: #FF7979;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FF7979;
+  text-transform: uppercase;
+  opacity: 1; /* Firefox */
+  font-size: 18px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FF7979;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #FF7979;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 </style>
