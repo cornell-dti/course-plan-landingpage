@@ -43,6 +43,39 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@font-face {
+  font-family: Avenir;
+  src: url("../assets/fonts/Avenir Roman.otf");
+}
+
+@font-face {
+  font-family: AvenirBold;
+  src: url("../assets/fonts/Avenir-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: OpenSansBold;
+  src: url("../assets/fonts/OpenSans-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: AvenirNextBold;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+
 h1{
   color: #FF7979;
   position: absolute;
@@ -95,6 +128,8 @@ a {
 
 .landing-header {
   font-size: 40px;
+  font-family: AvenirBold;
+  font-weight: bold;
 }
 
 .landing-body {
@@ -102,21 +137,26 @@ a {
   color: #858585;
   font-size: 20px;
   line-height: 27px;
+  font-family: AvenirNext;
 }
 
 .landing-text--bold {
+  font-family: AvenirNextBold;
   font-weight: bold;
 }
 
 .landing-subHeader {
   margin-bottom: 2.5rem;
   font-size: 28px;
+  font-family: AvenirNextBold;
+  font-weight: bold;
 }
 
 .landing-inputWrapper {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  height: 59px;
 }
 
 .landing-input {
@@ -127,6 +167,7 @@ a {
   margin-right: 30px;
   font-size: 18px;
   color: #FF7979;
+  font-family: OpenSans;
 }
 
 .landing-button {
@@ -138,7 +179,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-weight: bold;
+  font-family: OpenSansBold;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
