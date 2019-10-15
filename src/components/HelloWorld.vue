@@ -10,7 +10,7 @@
       <div class="landing-imageWrapper">
         <img class="landing-image" src="@/assets/image.png" />
       </div>
-      <div class="landing-contentWrapper">
+      <div class="landing-wrapper">
         <h2 class="landing-header">Don't let your schedule overwhelm you</h2>
         <div class="landing-body">
           <span class="landing-text">
@@ -21,6 +21,9 @@
           <span class="landing-text">, track your requirements and plan your classes at Cornell smarter & easier! 
             Gain early access by filling out your email below and help us grow into what you need!
           </span>
+        </div>
+        <div class="landing-imageWrapper--mobile">
+          <img class="landing-image" src="@/assets/image.png" />
         </div>
         <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
         <div class="landing-inputWrapper">
@@ -126,6 +129,12 @@ a {
   justify-content: center;
 }
 
+.landing-imageWrapper--mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .landing-header {
   font-size: 40px;
   font-family: AvenirBold;
@@ -157,6 +166,7 @@ a {
   justify-content: space-between;
   font-size: 18px;
   height: 59px;
+  margin-bottom: 2rem;
 }
 
 .landing-input {
@@ -206,4 +216,40 @@ a {
   text-transform: uppercase;
   font-size: 18px;
 }
+
+@media (max-width: 1023px) {
+  .landing-imageWrapper{
+    display: none;
+  }
+
+  .landing-content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .landing-image {
+    max-width: 15rem;
+  }
+
+  .landing-inputWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .landing-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-imageWrapper--mobile{
+    display: none;
+  }
+}
+
 </style>
