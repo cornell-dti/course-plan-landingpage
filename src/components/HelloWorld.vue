@@ -44,10 +44,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1{
+  color: #FF7979;
+  position: absolute;
+  width: 223px;
+  height: 55px;
+  left: 60px;
+  top: 30px;
+
   font-family: Avenir;
   font-size: 40px;
   line-height: 55px;
-  color: #FF7979;
 }
 
 h3 {
