@@ -179,6 +179,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
+  padding-left: 10px;
+  padding-right: 10px;
 
   font-weight: bold;
   font-family: OpenSansBold;
