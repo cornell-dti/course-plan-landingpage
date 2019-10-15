@@ -79,7 +79,7 @@ export default {
 h1{
   color: #FF7979;
   position: absolute;
-  width: 223px;
+  /* width: 223px; */
   height: 55px;
   left: 60px;
   top: 30px;
