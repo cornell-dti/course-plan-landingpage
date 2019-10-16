@@ -237,12 +237,15 @@ a {
   }
 
   .landing-input {
-    width: 100%;
+    width: auto;
     margin-right: 0;
   }
 
   .landing-button {
-    width: 100%;
+    width: auto;
+    margin-top: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
   }
 }
 
