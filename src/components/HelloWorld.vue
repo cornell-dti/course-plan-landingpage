@@ -2,7 +2,7 @@
   <div class="landing">
     <header>
       <div class="banner">
-      <h1>{{ msg }}</h1>
+      <h1 class="title">{{ msg }}</h1>
       </div>
     </header>
     
@@ -38,28 +38,9 @@
 </template>
 
 <script>
-//import Firebase from 'firebase'
+import firebaseConfig from '../firebaseConfig'
 
-import firebase from 'firebase'
-import 'firebase/firestore'
-
-// firebase init goes here
-const config = {
-    apiKey: "AIzaSyDkKOpImjbjS2O0RhIQNJLQXx2SuYbxsfU",
-    authDomain: "cornell-courseplan.firebaseapp.com",
-    databaseURL: "https://cornell-courseplan.firebaseio.com",
-    projectId: "cornell-courseplan",
-    storageBucket: "cornell-courseplan.appspot.com",
-    messagingSenderId: "1031551180906",
-}
-
-firebase.initializeApp(config)
-
-// firebase utils
-let db = firebase.firestore()
-
-// firebase collections
-let emailsCollection = db.collection('emails')
+let emailsCollection = firebaseConfig.emailsCollection;
 
 export default {
   name: 'HelloWorld',
@@ -123,7 +104,6 @@ export default {
 h1{
   color: #FF7979;
   position: absolute;
-  width: 223px;
   height: 55px;
   left: 60px;
   top: 30px;
@@ -262,6 +242,16 @@ a {
   font-size: 18px;
 }
 
+@media (max-width: 639px) {
+  .landing-header {
+    text-align: center;
+  }
+
+  .landing-subHeader {
+    text-align: center;
+  }
+}
+
 @media (max-width: 1023px) {
   .landing-imageWrapper{
     display: none;
@@ -270,6 +260,7 @@ a {
   .landing-content {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-top: 2rem;
   }
 
   .landing-image {
@@ -293,6 +284,10 @@ a {
     height: 59px;
     margin-top: .50rem;
 
+  }
+
+  .title {
+    position: unset;
   }
 }
 
