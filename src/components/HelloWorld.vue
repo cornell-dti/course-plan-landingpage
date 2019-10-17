@@ -27,8 +27,10 @@
         </div>
         <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
         <div class="landing-inputWrapper">
-          <input class="landing-input" placeholder="Your School Email"/>
-          <div class="landing-button">Get Early Access</div>
+          <form id="form" class="landing-form" v-on:submit.prevent="addUser">
+            <input class="landing-input" placeholder="Your School Email" v-model="newUser.email" />
+            <input type="submit" class="landing-button">Get Early Access</input>
+          </form>
         </div>
       </div>
     </div>
@@ -36,10 +38,49 @@
 </template>
 
 <script>
+//import Firebase from 'firebase'
+
+import firebase from 'firebase'
+import 'firebase/firestore'
+
+// firebase init goes here
+const config = {
+    apiKey: "AIzaSyDkKOpImjbjS2O0RhIQNJLQXx2SuYbxsfU",
+    authDomain: "cornell-courseplan.firebaseapp.com",
+    databaseURL: "https://cornell-courseplan.firebaseio.com",
+    projectId: "cornell-courseplan",
+    storageBucket: "cornell-courseplan.appspot.com",
+    messagingSenderId: "1031551180906",
+}
+
+firebase.initializeApp(config)
+
+// firebase utils
+let db = firebase.firestore()
+
+// firebase collections
+let emailsCollection = db.collection('emails')
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  firebase: {
+    users: emailsCollection
+  },
+  data() {
+    return {
+      newUser: {
+        email: ''
+      }
+    }
+  },
+  methods: {
+    addUser: function () {
+      emailsCollection.add(this.newUser);
+      this.newUser.email = '';
+    }
   }
 }
 </script>
@@ -82,7 +123,7 @@ export default {
 h1{
   color: #FF7979;
   position: absolute;
-  /* width: 223px; */
+  width: 223px;
   height: 55px;
   left: 60px;
   top: 30px;
@@ -237,15 +278,12 @@ a {
   }
 
   .landing-input {
-    width: auto;
+    width: 100%;
     margin-right: 0;
   }
 
   .landing-button {
-    width: auto;
-    margin-top: 1rem;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    width: 100%;
   }
 }
 
