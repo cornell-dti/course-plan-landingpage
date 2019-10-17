@@ -26,12 +26,12 @@
           <img class="landing-image" src="@/assets/image.png" />
         </div>
         <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
-        <div class="landing-inputWrapper">
-          <form id="form" class="landing-form" v-on:submit.prevent="addUser">
+        <form id="form" class="landing-form" v-on:submit.prevent="addUser">
+          <div class="landing-inputWrapper">
             <input class="landing-input" placeholder="Your School Email" v-model="newUser.email" />
-            <input type="submit" class="landing-button">Get Early Access</input>
-          </form>
-        </div>
+            <input type="submit" class="landing-button" value = "Get Early Access" />
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -206,15 +206,16 @@ a {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-  height: 59px;
   margin-bottom: 2rem;
 }
 
 .landing-input {
-  padding: .75rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
   border: 2px #FF7979 solid;
   border-radius: 5px;
-  width: calc(100% / 3 * 2);
+  height: 59px;
+  width: -webkit-fill-available;
   margin-right: 30px;
   font-size: 18px;
   color: #FF7979;
@@ -223,7 +224,8 @@ a {
 
 .landing-button {
   text-transform: uppercase;
-  width: calc(100% / 3);
+  width: 190px;
+  height: 59px;
   background: #FF7979;
   border-radius: 5px;
   color: white;
@@ -232,9 +234,11 @@ a {
   justify-content: center;
   text-align: center;
 
-  padding-left: 10px;
-  padding-right: 10px;
 
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 18px;
   font-weight: bold;
   font-family: OpenSansBold;
 }
@@ -275,15 +279,20 @@ a {
   .landing-inputWrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .landing-input {
-    width: 100%;
+    width: auto;
     margin-right: 0;
+    height: 59px;
   }
 
-  .landing-button {
-    width: 100%;
+  .landing-button{
+    width: auto;
+    height: 59px;
+    margin-top: .50rem;
+
   }
 }
 
