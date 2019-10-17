@@ -38,28 +38,9 @@
 </template>
 
 <script>
-//import Firebase from 'firebase'
+import firebaseConfig from '../firebaseConfig'
 
-import firebase from 'firebase'
-import 'firebase/firestore'
-
-// firebase init goes here
-const config = {
-    apiKey: "AIzaSyDkKOpImjbjS2O0RhIQNJLQXx2SuYbxsfU",
-    authDomain: "cornell-courseplan.firebaseapp.com",
-    databaseURL: "https://cornell-courseplan.firebaseio.com",
-    projectId: "cornell-courseplan",
-    storageBucket: "cornell-courseplan.appspot.com",
-    messagingSenderId: "1031551180906",
-}
-
-firebase.initializeApp(config)
-
-// firebase utils
-let db = firebase.firestore()
-
-// firebase collections
-let emailsCollection = db.collection('emails')
+let emailsCollection = firebaseConfig.emailsCollection;
 
 export default {
   name: 'HelloWorld',
