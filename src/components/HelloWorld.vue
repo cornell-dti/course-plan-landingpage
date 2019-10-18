@@ -2,7 +2,7 @@
   <div class="landing">
     <header>
       <div class="banner">
-      <h1 class="title">{{ msg }}</h1>
+      <h1 class="title">{{ appName }}</h1>
       </div>
     </header>
     
@@ -11,21 +11,16 @@
         <img class="landing-image" src="@/assets/image.png" />
       </div>
       <div class="landing-wrapper">
-        <h2 class="landing-header">Don't let your schedule overwhelm you</h2>
+        <h2 class="landing-header">{{ header1 }}</h2>
         <div class="landing-body">
-          <span class="landing-text">
-            Have you thought about your 4 year plan in College? What classes you need to take? 
-            Want to take? With
-          </span>
-          <span class="landing-text landing-text--bold">Course Plan</span>
-          <span class="landing-text">, track your requirements and plan your classes at Cornell smarter & easier! 
-            Gain early access by filling out your email below and help us grow into what you need!
-          </span>
+          <span class="landing-text">{{ body1 }}</span>
+          <span class="landing-text landing-text--bold">{{ appName }}</span>
+          <span class="landing-text">{{ body2 }}</span>
         </div>
         <div class="landing-imageWrapper--mobile">
           <img class="landing-image" src="@/assets/image.png" />
         </div>
-        <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
+        <h3 class="landing-subHeader">{{ header2 }}</h3>
         <form id="form" class="landing-form" v-on:submit.prevent="addUser">
           <div class="landing-inputWrapper">
             <input class="landing-input" placeholder="Your School Email" v-model="newUser.email" />
@@ -45,7 +40,11 @@ let emailsCollection = firebaseConfig.emailsCollection;
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    appName: String,
+    header1: String,
+    header2: String,
+    body1: String,
+    body2: String
   },
   firebase: {
     users: emailsCollection
