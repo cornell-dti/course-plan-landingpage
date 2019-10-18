@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld appName="Course Plan" header1="Don't let your schedule overwhelm you" body1="Have you thought about your 4 year plan in College? 
+    What classes you need to take? Want to take? With " body2=", track your requirements and plan your classes at Cornell smarter & easier! 
+    Gain early access by filling out your email below and help us grow into what you need!" header2="Track requirements. Build schedules. Plan smarter."/>
   </div>
 </template>
 
