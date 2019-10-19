@@ -6,6 +6,7 @@
       </div>
     </header>
     
+    <main>
     <div class="landing-content">
       <div class="landing-imageWrapper">
         <img class="landing-image" src="@/assets/image.png" alt="walking man" />
@@ -30,6 +31,7 @@
         </form>
       </div>
     </div>
+    </main>
   </div>
 </template>
 
