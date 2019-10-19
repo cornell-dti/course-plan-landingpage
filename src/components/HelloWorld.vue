@@ -2,7 +2,7 @@
   <div class="landing">
     <header>
       <div class="banner">
-      <h1 class="title">{{ msg }}</h1>
+      <h1 class="title">{{ appName }}</h1>
       </div>
     </header>
     
@@ -11,21 +11,16 @@
         <img class="landing-image" src="@/assets/image.png" alt="walking man" />
       </div>
       <div class="landing-wrapper">
-        <h2 class="landing-header">Don't let your schedule overwhelm you</h2>
+        <h2 class="landing-header">{{ header1 }}</h2>
         <div class="landing-body">
-          <span class="landing-text">
-            Have you thought about your 4 year plan in College? What classes you need to take? 
-            Want to take? With
-          </span>
-          <span class="landing-text landing-text--bold">Course Plan</span>
-          <span class="landing-text">, track your requirements and plan your classes at Cornell smarter & easier! 
-            Gain early access by filling out your email below and help us grow into what you need!
-          </span>
+          <span class="landing-text">{{ body1 }}</span>
+          <span class="landing-text landing-text--bold">{{ appName }}</span>
+          <span class="landing-text">{{ body2 }}</span>
         </div>
         <div class="landing-imageWrapper--mobile">
           <img class="landing-image" src="@/assets/image.png" alt="walking man" />
         </div>
-        <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
+        <h3 class="landing-subHeader">{{ header2 }}</h3>
         <form id="form" class="landing-form" v-on:submit.prevent="addUser">
           <div class="landing-inputWrapper">
             <label class="landing-input-label" for="emailInput">Email</label>
@@ -46,7 +41,11 @@ let emailsCollection = firebaseConfig.emailsCollection;
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    appName: String,
+    header1: String,
+    header2: String,
+    body1: String,
+    body2: String
   },
   firebase: {
     users: emailsCollection
@@ -103,7 +102,7 @@ export default {
 }
 
 h1{
-  color: #FF7979;
+  color: #2F3676;
   position: absolute;
   height: 55px;
   left: 60px;
@@ -165,7 +164,7 @@ a {
 
 .landing-body {
   margin-top: 3.5rem;
-  color: #858585;
+  color: #757575;
   font-size: 20px;
   line-height: 27px;
   font-family: AvenirNext;
@@ -193,13 +192,13 @@ a {
 .landing-input {
   padding-left: .75rem;
   padding-right: .75rem;
-  border: 2px #FF7979 solid;
+  border: 2px #2F3676 solid;
   border-radius: 5px;
   height: 59px;
   width: -webkit-fill-available;
   margin-right: 30px;
   font-size: 18px;
-  color: #FF7979;
+  color: #2F3676;
   font-family: OpenSans;
 }
 
@@ -211,7 +210,7 @@ a {
   text-transform: uppercase;
   width: 190px;
   height: 59px;
-  background: #FF7979;
+  background: #2F3676;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -228,21 +227,33 @@ a {
   font-family: OpenSansBold;
 }
 
+.landing-button:hover {
+  background-color: #121745;
+}
+
+.landing-button:focus {
+  background-color: #121745;
+}
+
+.landing-button:active {
+  background-color: #121745;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   opacity: 1; /* Firefox */
   font-size: 18px;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   font-size: 18px;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   font-size: 18px;
 }
@@ -284,11 +295,10 @@ a {
     height: 59px;
   }
 
-  .landing-button{
+  .landing-button {
     width: auto;
     height: 59px;
     margin-top: .50rem;
-
   }
 
   .title {
