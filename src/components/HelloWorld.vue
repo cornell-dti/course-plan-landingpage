@@ -6,9 +6,10 @@
       </div>
     </header>
     
+    <main>
     <div class="landing-content">
       <div class="landing-imageWrapper">
-        <img class="landing-image" src="@/assets/image.png" />
+        <img class="landing-image" src="@/assets/image.png" alt="walking man" />
       </div>
       <div class="landing-wrapper">
         <h2 class="landing-header">{{ header1 }}</h2>
@@ -18,17 +19,19 @@
           <span class="landing-text">{{ body2 }}</span>
         </div>
         <div class="landing-imageWrapper--mobile">
-          <img class="landing-image" src="@/assets/image.png" />
+          <img class="landing-image" src="@/assets/image.png" alt="walking man" />
         </div>
         <h3 class="landing-subHeader">{{ header2 }}</h3>
         <form id="form" class="landing-form" v-on:submit.prevent="addUser">
           <div class="landing-inputWrapper">
-            <input class="landing-input" placeholder="Your School Email" v-model="newUser.email" />
-            <input type="submit" class="landing-button" value = "Get Early Access" />
+            <label class="landing-input-label" for="emailInput">Email</label>
+            <input class="landing-input" name="emailInput" id="emailInput" placeholder="Your School Email" v-model="newUser.email" />
+            <input type="submit" class="landing-button" name="emailButton" value = "Get Early Access" />
           </div>
         </form>
       </div>
     </div>
+    </main>
   </div>
 </template>
 
@@ -101,7 +104,7 @@ export default {
 }
 
 h1{
-  color: #FF7979;
+  color: #2F3676;
   position: absolute;
   height: 55px;
   left: 60px;
@@ -163,7 +166,7 @@ a {
 
 .landing-body {
   margin-top: 3.5rem;
-  color: #858585;
+  color: #757575;
   font-size: 20px;
   line-height: 27px;
   font-family: AvenirNext;
@@ -191,21 +194,25 @@ a {
 .landing-input {
   padding-left: .75rem;
   padding-right: .75rem;
-  border: 2px #FF7979 solid;
+  border: 2px #2F3676 solid;
   border-radius: 5px;
   height: 59px;
   width: -webkit-fill-available;
   margin-right: 30px;
   font-size: 18px;
-  color: #FF7979;
+  color: #2F3676;
   font-family: OpenSans;
+}
+
+.landing-input-label{
+  display: none;
 }
 
 .landing-button {
   text-transform: uppercase;
   width: 190px;
   height: 59px;
-  background: #FF7979;
+  background: #2F3676;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -222,21 +229,33 @@ a {
   font-family: OpenSansBold;
 }
 
+.landing-button:hover {
+  background-color: #121745;
+}
+
+.landing-button:focus {
+  background-color: #121745;
+}
+
+.landing-button:active {
+  background-color: #121745;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   opacity: 1; /* Firefox */
   font-size: 18px;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   font-size: 18px;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #FF7979;
+  color: #2F3676;
   text-transform: uppercase;
   font-size: 18px;
 }
@@ -278,11 +297,10 @@ a {
     height: 59px;
   }
 
-  .landing-button{
+  .landing-button {
     width: auto;
     height: 59px;
     margin-top: .50rem;
-
   }
 
   .title {
