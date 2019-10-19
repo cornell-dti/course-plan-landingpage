@@ -8,7 +8,7 @@
     
     <div class="landing-content">
       <div class="landing-imageWrapper">
-        <img class="landing-image" src="@/assets/image.png" />
+        <img class="landing-image" src="@/assets/image.png" alt="walking man" />
       </div>
       <div class="landing-wrapper">
         <h2 class="landing-header">Don't let your schedule overwhelm you</h2>
@@ -23,13 +23,14 @@
           </span>
         </div>
         <div class="landing-imageWrapper--mobile">
-          <img class="landing-image" src="@/assets/image.png" />
+          <img class="landing-image" src="@/assets/image.png" alt="walking man" />
         </div>
         <h3 class="landing-subHeader">Track requirements. Build schedules. Plan smarter.</h3>
         <form id="form" class="landing-form" v-on:submit.prevent="addUser">
           <div class="landing-inputWrapper">
-            <input class="landing-input" placeholder="Your School Email" v-model="newUser.email" />
-            <input type="submit" class="landing-button" value = "Get Early Access" />
+            <label class="landing-input-label" for="emailInput">Email</label>
+            <input class="landing-input" name="emailInput" id="emailInput" placeholder="Your School Email" v-model="newUser.email" />
+            <input type="submit" class="landing-button" name="emailButton" value = "Get Early Access" />
           </div>
         </form>
       </div>
@@ -200,6 +201,10 @@ a {
   font-size: 18px;
   color: #FF7979;
   font-family: OpenSans;
+}
+
+.landing-input-label{
+  display: none;
 }
 
 .landing-button {
